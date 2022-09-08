@@ -1,0 +1,12 @@
+@import '../../index.scss';
+
+.navbar {
+    background-color: $purple;
+    &__link {
+        color: white!important;
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
