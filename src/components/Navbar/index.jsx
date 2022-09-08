@@ -7,7 +7,7 @@ import './styles.scss'
 const Navbar = () => {
   return (
     <NavbarB className="navbar" expand="lg">
-        <Container>
+        <Container fluid>
             <NavbarB.Brand
                 className="text-light"
                 href="#home"

@@ -12,6 +12,7 @@ export const useAPI = () => {
 
 export const APIContextProvider = ({ children }) => {
   const [data, setData] = useState([])
+  const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -21,6 +22,9 @@ export const APIContextProvider = ({ children }) => {
       .then(data => {
         const formattedData = Object.keys(data).map(key => [key, data[key]])
         setData(formattedData)
+        const allCategories = formattedData.map(item => item[1].category)
+        const filteredCategories = [...new Set(allCategories)].sort()
+        setCategories(filteredCategories)
         setLoading(false)
       })
   }, [])
@@ -28,6 +32,7 @@ export const APIContextProvider = ({ children }) => {
   return (
     <APIContext.Provider value={{
       data,
+      categories,
       loading
     }}>
       {children}
