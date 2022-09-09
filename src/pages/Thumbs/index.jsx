@@ -30,7 +30,7 @@ const Thumbs = ({ type }) => {
     const endOffset = itemOffset + itemsPerPage
     setCurrentItems(articles.slice(itemOffset, endOffset))
     setPageCount(Math.ceil(articles.length / itemsPerPage))
-  }, [recentNews, topRatedNews, itemOffset])
+  }, [type, articles, recentNews, itemOffset])
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % articles.length

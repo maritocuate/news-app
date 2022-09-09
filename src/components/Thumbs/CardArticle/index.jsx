@@ -24,7 +24,10 @@ const CardArticle = ({ data }) => {
               className='article__title'
             >{ capitalizeFirstLetter(title) }</Card.Title>
             <span className='d-lg-flex justify-content-between align-items-center'>
-              <Card.Text className="m-0"><FaRssSquare /> { capitalizeFirstLetter(category) }</Card.Text>
+              <Card.Text className="m-0">
+                <FaRssSquare />
+                { capitalizeFirstLetter(category) }
+              </Card.Text>
               <Card.Text><FaEye /> { views }</Card.Text>
             </span>
         </Card.Body>
