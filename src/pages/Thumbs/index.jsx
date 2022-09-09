@@ -3,12 +3,13 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import CardArticle from '../../components/Thumbs/CardArticle'
 import ReactPaginate from 'react-paginate'
+import { useParams } from 'react-router-dom'
 
 import './styles.scss'
 import { useAPI } from '../../context/apiContext'
 
 const Thumbs = ({ type }) => {
-  const { recentNews, topRatedNews, isLoading } = useAPI()
+  const { recentNews, topRatedNews, byCategory, isLoading } = useAPI()
   const [articles, setArticles] = useState([])
   const [titlePage, setTitlePage] = useState('')
 
@@ -18,19 +19,24 @@ const Thumbs = ({ type }) => {
   const [itemOffset, setItemOffset] = useState(0)
   const itemsPerPage = 8
 
+  const { id } = useParams()
+
   useEffect(() => {
     if (type === 'recent') {
       setArticles(recentNews())
       setTitlePage('Recent News')
-    } else {
+    } else if (type === 'rated') {
       setArticles(topRatedNews())
       setTitlePage('Top Rated News')
+    } else {
+      setArticles(byCategory(id))
+      setTitlePage(`Category: ${id}`)
     }
 
     const endOffset = itemOffset + itemsPerPage
     setCurrentItems(articles.slice(itemOffset, endOffset))
     setPageCount(Math.ceil(articles.length / itemsPerPage))
-  }, [type, articles, recentNews, itemOffset])
+  }, [type, titlePage, byCategory, itemOffset])
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % articles.length

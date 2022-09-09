@@ -15,6 +15,7 @@ function App () {
         <Routes>
           <Route path="/recent" element={<Thumbs type='recent' />} />
           <Route path="/toprated" element={<Thumbs type='rated' />} />
+          <Route path='/category/:id' element={<Thumbs type='category' />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="*" element={<Navigate to="/recent"/>} />
         </Routes>

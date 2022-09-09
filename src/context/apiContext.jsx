@@ -43,12 +43,18 @@ export const APIContextProvider = ({ children }) => {
     return result
   }
 
+  const byCategory = category => {
+    const result = data.filter(item => item[1].category === category)
+    return result
+  }
+
   return (
     <APIContext.Provider value={{
       data,
       categories,
       recentNews,
       topRatedNews,
+      byCategory,
       loading
     }}>
       {children}
