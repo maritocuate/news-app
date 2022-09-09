@@ -1,0 +1,8 @@
+@import '../../../index.scss';
+
+.article {
+    &__title {
+        height: 50px;
+        overflow: hidden;
+    }
+}

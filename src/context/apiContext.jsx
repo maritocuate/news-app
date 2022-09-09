@@ -29,10 +29,26 @@ export const APIContextProvider = ({ children }) => {
       })
   }, [])
 
+  const recentNews = () => {
+    const result = data.sort((a, b) => {
+      return new Date(b[1].createdAt) - new Date(a[1].createdAt)
+    })
+    return result
+  }
+
+  const topRatedNews = () => {
+    const result = data.sort((a, b) => {
+      return b[1].views - a[1].views
+    })
+    return result
+  }
+
   return (
     <APIContext.Provider value={{
       data,
       categories,
+      recentNews,
+      topRatedNews,
       loading
     }}>
       {children}

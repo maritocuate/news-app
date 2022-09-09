@@ -2,14 +2,14 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 import { useAPI } from '../../context/apiContext'
-import CardCategory from '../../components/Home/CardCategory'
+import CardCategory from '../../components/Category/CardCategory'
 
-const Home = () => {
+const Categories = () => {
   const { categories, isLoading } = useAPI()
 
   return (
     <>
-        <h2>Categories to show</h2>
+        <h2 className='m-4'>Categories to show</h2>
         <div>
             {
                 !isLoading
@@ -29,4 +29,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Categories

@@ -1,9 +1,10 @@
 import { APIContextProvider } from './context/apiContext'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import './app.scss'
 
 import Navbar from './components/Navbar'
-import Home from './pages/Home'
+import Categories from './pages/Categories'
+import Thumbs from './pages/Thumbs'
 
 function App () {
   return (
@@ -12,7 +13,10 @@ function App () {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/recent" element={<Thumbs type='recent' />} />
+          <Route path="/toprated" element={<Thumbs type='rated' />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="*" element={<Navigate to="/recent"/>} />
         </Routes>
       </div>
     </APIContextProvider>
