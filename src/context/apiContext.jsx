@@ -48,6 +48,10 @@ export const APIContextProvider = ({ children }) => {
     return result
   }
 
+  const getArticleById = id => {
+    return data.filter(item => item[0] === id)
+  }
+
   return (
     <APIContext.Provider value={{
       data,
@@ -55,6 +59,7 @@ export const APIContextProvider = ({ children }) => {
       recentNews,
       topRatedNews,
       byCategory,
+      getArticleById,
       loading
     }}>
       {children}

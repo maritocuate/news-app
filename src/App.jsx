@@ -5,6 +5,7 @@ import './app.scss'
 import Navbar from './components/Navbar'
 import Categories from './pages/Categories'
 import Thumbs from './pages/Thumbs'
+import Article from './pages/Article'
 
 function App () {
   return (
@@ -17,6 +18,8 @@ function App () {
           <Route path="/toprated" element={<Thumbs type='rated' />} />
           <Route path='/category/:id' element={<Thumbs type='category' />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path='/article/:id' element={<Article />} />
+
           <Route path="*" element={<Navigate to="/recent"/>} />
         </Routes>
       </div>

@@ -1,9 +1,10 @@
 import { FaEye, FaRssSquare } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './styles.scss'
 
-const CardArticle = ({ data }) => {
+const CardArticle = ({ id, data }) => {
   const { title, category, views, thumbnailUrl, createdAt } = data
 
   const capitalizeFirstLetter = text => {
@@ -36,7 +37,12 @@ const CardArticle = ({ data }) => {
           <small className="text-muted">
             { setFormatDate(createdAt) }
           </small>
-          <Button variant="primary" size="sm">Read More</Button>
+          <Button
+            variant="primary"
+            size="sm"
+            as={ Link }
+            to={ `/article/${id}` }
+          >Read More</Button>
         </Card.Footer>
     </Card>
   )

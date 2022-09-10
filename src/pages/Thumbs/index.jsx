@@ -54,7 +54,7 @@ const Thumbs = ({ type }) => {
                         <Row xs={2} md={4} className="g-4">
                             {currentItems.map((item, i) => (
                                 <Col key={ i }>
-                                    <CardArticle data={item[1]} />
+                                    <CardArticle id={item[0]} data={item[1]} />
                                 </Col>
                             ))}
                         </Row>

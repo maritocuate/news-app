@@ -1,0 +1,25 @@
+@import '../../../index.scss';
+
+.note {
+    &__title {
+        display: block;
+        margin: 20px;
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+    &__stats {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: wrap;
+    }
+    &__image {
+        height: 300px;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.3s;
+        &.loaded {
+            opacity: 1;
+        }
+    }
+}
