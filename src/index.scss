@@ -1,3 +1,4 @@
+$black: rgb(29, 29, 38);
 $purple: rgb(161, 117, 211);
 $grey: #dbdbdb;
 
@@ -13,6 +14,7 @@ $grey: #dbdbdb;
 body {
   margin: 0;
   font-family: 'HelveticaRegular', 'Verdana';
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
+  color: $black;
 }

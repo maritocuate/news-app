@@ -22,7 +22,7 @@ const Note = ({ data }) => {
             width="100%"
             onLoad={() => setImgLoaded(true)}
         />
-        <h3>{ subtitle }</h3>
+        <h3 className='note__subtitle'>{ subtitle }</h3>
         <p>
             { body }
         </p>

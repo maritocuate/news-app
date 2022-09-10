@@ -2,11 +2,15 @@
 
 .note {
     &__title {
+        font-family: 'HelveticaBold';
         display: block;
         margin: 20px;
         &::first-letter {
             text-transform: capitalize;
         }
+    }
+    &__subtitle {
+        font-family: 'HelveticaBold';
     }
     &__stats {
         display: flex;
