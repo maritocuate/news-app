@@ -27,7 +27,7 @@ export const APIContextProvider = ({ children }) => {
         setCategories(filteredCategories)
         setLoading(false)
       })
-  }, [])
+  }, [loading])
 
   const recentNews = () => {
     const result = data.sort((a, b) => {
