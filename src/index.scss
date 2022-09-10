@@ -1,14 +1,18 @@
 $purple: rgb(161, 117, 211);
 $grey: #dbdbdb;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+@font-face {
+    font-family: HelveticaRegular;
+    src: url("./assets/HelveticaNeueRegular.ttf") format('truetype');
+}
+@font-face {
+    font-family: HelveticaBold;
+    src: url("./assets/HelveticaNeueBold.ttf") format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'HelveticaRegular', 'Verdana';
+  font-weight: normal;
+  font-style: normal;
 }
