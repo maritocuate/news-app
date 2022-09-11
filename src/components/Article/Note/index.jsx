@@ -23,7 +23,7 @@ const Note = ({ data }) => {
             onLoad={() => setImgLoaded(true)}
         />
         <h3 className='note__subtitle'>{ subtitle }</h3>
-        <p>
+        <p className='note__body'>
             { body }
         </p>
     </div>
